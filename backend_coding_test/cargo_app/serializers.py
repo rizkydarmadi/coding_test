@@ -13,3 +13,10 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ["id", "country", "category_title", "price_per_kilo"]
+
+
+class CalculateFreightSerializer(serializers.Serializer):
+    country_id = serializers.IntegerField()
+    category_id = serializers.IntegerField()
+    destination_id = serializers.IntegerField()
+    weight = serializers.IntegerField()
